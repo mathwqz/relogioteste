@@ -1,46 +1,44 @@
-/* Estilos gerais */
+/* estilos gerais */
 body {
-  background-color: #000; /* Fundo preto absoluto */
-  color: #0ff; /* Neon ciano */
-  font-family: 'Poppins', sans-serif; /* Fonte moderna */
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   margin: 0;
-  text-shadow: 0px 0px 15px #0ff; /* Glow neon */
 }
 
-/* Relógio */
 .clock {
   text-align: center;
 }
 
-/* Container da hora e dos milissegundos */
+/* efeito de desfoque aplicado na mudança de segundos */
+.blur-effect {
+  filter: blur(2px);
+  transition: filter 0.15s ease-out;
+}
+
 .time-container {
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-/* Estilo da hora principal */
 .time {
   font-size: 7em;
   font-weight: 700;
   letter-spacing: 5px;
 }
 
-/* Milissegundos menores */
 .milliseconds {
   font-size: 2em;
   font-weight: 400;
   margin-left: 10px;
   opacity: 0.8;
-  text-shadow: 0px 0px 10px #0ff;
+  text-shadow: 0px 0px 10px #fff;
 }
 
-/* Container da data */
 .date-container {
   display: flex;
   justify-content: center;
@@ -48,18 +46,16 @@ body {
   margin-top: 15px;
 }
 
-/* Caixas da data (dia/mês/ano) */
 .date-box {
   font-size: 2em;
   font-weight: 700;
-  background: rgba(0, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px #0ff;
-  text-shadow: 0px 0px 5px #0ff;
+  box-shadow: 0px 0px 10px #fff;
+  text-shadow: 0px 0px 5px #fff;
 }
 
-/* Dia da semana */
 .day {
   font-size: 1.8em;
   font-weight: 400;
@@ -67,12 +63,63 @@ body {
   margin-top: 10px;
 }
 
-/* Rodapé */
 footer {
   position: absolute;
   bottom: 10px;
   text-align: center;
   width: 100%;
   font-size: 1.2em;
-  opacity: 0.5;
+  opacity: 0.8;
+}
+
+/* tema escuro (padrão) */
+body, .dark-theme {
+  background-color: #000;
+  color: #f0f0f0;
+  text-shadow: 0px 0px 15px #fff;
+}
+
+/* tema claro */
+body.light-theme {
+  background-color: #f0f0f0;
+  color: #333;
+  text-shadow: none;
+}
+
+body.light-theme .time,
+body.light-theme .milliseconds {
+  color: #333;
+  text-shadow: none;
+}
+
+body.light-theme .date-box {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+body.light-theme .day {
+  color: #555;
+}
+
+body.light-theme footer {
+  color: #777;
+  opacity: 1;
+}
+
+/* card de doação */
+.donation-card {
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  background-color: transparent;
+  color: inherit;
+  box-shadow: 0px 0px 10px #1E90FF;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* classe pra esconder elementos */
+.hidden {
+  display: none;
 }
